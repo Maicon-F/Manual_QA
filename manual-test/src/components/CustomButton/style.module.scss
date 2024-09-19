@@ -1,0 +1,18 @@
+.button {
+    font-weight: bold; 
+    border: none;
+    background-color: #5ECE7B;
+    color: #FFFFFF;
+    padding: 1em 6em;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+
+    box-shadow: 0px 7px 6px -4px grey;
+    
+  }
+
+  .button:hover{
+    color:black;
+  }

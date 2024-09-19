@@ -1,0 +1,80 @@
+{"items":
+
+[
+    {
+      "id": 1,
+      "category": "female",
+      "name": "colorful blouses",
+      "url": "https://imgur.com/QjKrDJW",
+      "price": 29.99,
+      "description": "Stylish black girl outfit."
+    },
+    {
+      "id": 2,
+      "category": "female",
+      "name": "Long Sleeved T-shirt",
+      "url": "https://imgur.com/e2XiCfp",
+      "price": 34.50,
+      "description": "Elegant Asian fashion."
+    },
+    {
+      "id": 3,
+      "category": "male",
+      "name": "Jeans jacket",
+      "url": "https://imgur.com/uluVc8u",
+      "price": 25.40,
+      "description": "Cool and casual look."
+    },
+    {
+      "id": 4,
+      "category": "male",
+      "name": "sweater",
+      "url": "https://imgur.com/SVm10Zg",
+      "price": 42.75,
+      "description": "Warm sweater for a hot look."
+    },
+    {
+      "id": 5,
+      "category": "female",
+      "name": "purse",
+      "url": "https://imgur.com/76dQSLX",
+      "price": 50.70,
+      "description": "Chic blue dress with heels."
+    },
+    {
+      "id": 6,
+      "category": "all",
+      "name": "shoes",
+      "url": "https://imgur.com/NTFZFgb",
+      "price": 18.99,
+      "description": "Versatile shoes for everyone."
+    },
+    {
+      "id": 7,
+      "category": "female",
+      "name": "Leather Jacket",
+      "url": "https://imgur.com/J4X4okw",
+      "price": 60.90,
+      "description": "Fashionable jacket for women."
+    },
+    {
+      "id": 8,
+      "category": "female",
+      "name": "sweater",
+      "url": "https://imgur.com/ueMmua6",
+      "price": 40.50,
+      "description": "Cozy and stylish sweater."
+    },
+    {
+      "id": 9,
+      "category": "male",
+      "name": "jeans",
+      "url": "https://imgur.com/EpiE7br",
+      "price": 35.25,
+      "description": "Comfortable jeans for men."
+    }
+  ]
+
+}
+  
+    

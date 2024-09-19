@@ -1,0 +1,59 @@
+@import-normalize;
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  font-family: var(--ral);
+  font-size: 19px;
+
+
+  p{
+    padding:10px 0px 0px 10px;
+    font-weight: bold;
+  }
+
+  p:first-child{
+    font-weight: 300;
+  }
+
+  i{
+    font-size: 16px;
+  }
+
+  
+
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  
+  img {
+    width: 250px; /* Constrain image width */
+    height: 310px; /* Constrain image height */
+  }
+
+
+  padding: 0px 10px;
+  padding-top: 8px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  overflow: hidden; 
+
+}
+
+
+
+
+  
+
+
+
+
