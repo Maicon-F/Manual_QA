@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import style from "./style.module.scss";
 import CustomButton from "../CustomButton/customButton";
-import ColorOptions from "../attributes";
 import Item from '../../models/Item';
+import ColorOptions from '../attributes';
 
 interface MyComponentProps {
     item:Item;
@@ -11,22 +11,27 @@ interface MyComponentProps {
 
 const PD: React.FC<MyComponentProps> =  ({ item}) => {
 
+        const [product, setProduct] = useState<Item>(item);
+        const handleDataFromChild = (color: string) => {
+            item.color = color;
+            setProduct(item); // Update the parent's state with the child's data
+          };
+
 
         return (
                 <div className={style.container}>
                     <a><img  src={`${item.url}.png`}/></a>
                     <div>
                         <p className={style.title}>{item.name}</p>
+                        <ColorOptions colors={item.colors} selected={item.color} fromParent={handleDataFromChild}></ColorOptions>
                         <p>Price: <i className="fas fa-euro-sign"> {item.price}</i></p>
-                        <ColorOptions colors={item.colors} pickedColor={item.color}></ColorOptions>
-                        <CustomButton name="ADD TO CART"></CustomButton>
+                        <CustomButton name="ADD TO CART" item={product}></CustomButton>
                         <p>{item.description}</p>
                     </div>
                 </div>
-               
         )
-    
     }
+
 
     export default PD;
 

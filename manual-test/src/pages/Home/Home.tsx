@@ -4,7 +4,6 @@ import Card from "../../components/card/card";
 import data from "../../assets/items.json";
 import Item from "../../models/Item";
 import style from "./style.module.scss"
-import ColorOptions from "../../components/attributes";
 
 export default class Home extends React.Component<any, any> {
 items = getItems();

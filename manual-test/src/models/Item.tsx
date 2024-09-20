@@ -10,6 +10,9 @@ export default class Item{
     public price:number;
     public colors: string[] = ["blue", "red", "black", "yellow", "brown", "white"];
     public color:string = this.colors[0];
+    public sizes: string[] = ["S", "M", "L", "XL"];
+    public size: string = this.sizes[0];
+    public quantity:number=1;
 
     constructor(id: number, name: string,price:number, category?: Category[], url?: string, description?:string ) {
         this.id = id;
@@ -18,7 +21,10 @@ export default class Item{
         this.url = url;
         this.description=description;
         this.price = price;
-      }
+    }
+
+  
+
 
 
 }

@@ -2,8 +2,10 @@
 
 
 .container {
-  font-family: var(--ral);
   font-size: 26px;
+  font-family: var(--ral);
+
+
 
   img {
     width: 350px; /* Constrain image width */
@@ -17,8 +19,6 @@
   }
 
 
-  
-  
   padding: 0px 10px;
   margin-top:100px;
   margin: 100px 150px;
@@ -27,8 +27,6 @@
   align-items: center; 
   overflow: hidden;
 }
-
-
 
 
 .title{
