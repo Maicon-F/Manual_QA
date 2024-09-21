@@ -8,11 +8,10 @@
 
 
   img {
-    width: 350px; /* Constrain image width */
-    height: auto; /* Constrain image height */
+    width: auto; 
+    height: 450px; 
     margin-right: 100px;
   }
-
 
   p{
     margin-top: 25px;
@@ -23,7 +22,7 @@
   margin-top:100px;
   margin: 100px 150px;
   display: flex;
-  justify-content: start; /* Center image horizontally */
+  justify-content: start; 
   align-items: center; 
   overflow: hidden;
 }

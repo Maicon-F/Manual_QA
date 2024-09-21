@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    margin: 20px 0px;
+
+    div{
+        display: flex;
+        background-color: white;
+        width:45px;
+        height:45px;
+        margin: 4px;
+        border: black solid 1px;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            filter: brightness(60%); 
+          }
+    }
+
+    .selected{
+        border:#5ECE7B solid 5px;
+    }
+
+    
+}

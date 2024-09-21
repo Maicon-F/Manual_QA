@@ -16,7 +16,6 @@ const Description = () => {
 
     return (
         <div className={style.container}>
-            <Navbar></Navbar>
             <div>
                 <div>
                     <PD key={item.id} item={item} />

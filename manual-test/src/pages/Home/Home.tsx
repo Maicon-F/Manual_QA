@@ -11,7 +11,6 @@ items = getItems();
 render() {
     return (
         <div >
-            <Navbar></Navbar>
             <div className={style.container}>
                     {this.items.map((item: Item) => (
                         <div className={style.item} >

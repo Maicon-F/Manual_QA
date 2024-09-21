@@ -1,0 +1,56 @@
+.container{
+border: black solid 1px;
+background-color: lightblue;
+display: inline-block;
+padding: 0px  75px 100px 75px;
+margin: auto; 
+font-family: var(--ral);
+font-size: 26px;
+border-radius: 5%;
+
+ form{
+    max-width:500px;
+    margin-bottom: 20px;
+    input{
+        padding:20px;
+    }
+
+    label{
+        margin-top: 50px;
+        font-weight: bold;
+    }
+
+ }
+
+ button {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  padding: 10px 100px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  
+    &:active {
+      transform: scale(0.95); /* Shrinks the button to 95% of its original size */
+    }
+    &:hover{
+    color:black;
+    }
+
+}
+ 
+}
+
+
+.wrapper {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+    background-color: black;
+  }
+
+  

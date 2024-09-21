@@ -1,0 +1,31 @@
+.container{
+    background-color:  #66cdaa;
+    font-family: var(--ral);
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 2px solid black; 
+
+    img{
+        margin-left: 20px;
+        width:  60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+ 
+
+    a{
+        &:first-child{
+            color:black;
+         }
+        &:hover{
+            color: white;
+            font-weight: bold;
+        }
+    }
+
+    
+
+  
+}
+
