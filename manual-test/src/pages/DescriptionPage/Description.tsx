@@ -1,5 +1,4 @@
 
-import Navbar from "../../components/navbar/navbar";
 import PD from "../../components/pd/pd";
 import Item from "../../models/Item";
 import data from "../../assets/items.json";
@@ -10,7 +9,6 @@ import style from "./style.module.scss"
 
 
 const Description = () => {
-
     const { id } = useParams();
     const item: any = getItemById(id);
 
@@ -23,7 +21,6 @@ const Description = () => {
             </div>
         </div>
     )
-
 }
 
 export default Description;
@@ -40,6 +37,5 @@ function getItemById(id: any): Item {
             return res;
         }
     }
-
     return res;
 }   

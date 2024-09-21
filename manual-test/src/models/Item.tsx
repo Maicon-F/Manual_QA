@@ -23,10 +23,6 @@ export default class Item{
         this.price = price;
     }
 
-  
-
-
-
 }
 
 

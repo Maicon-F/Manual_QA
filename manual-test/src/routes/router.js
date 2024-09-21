@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home";
 import Description from "../pages/DescriptionPage/Description";
 import Login from "../pages/Login";
 import Signup from "../pages/SignUp";
+import Cart from "../pages/Cart";
 
 
 export default class Router extends React.Component{
@@ -16,6 +17,7 @@ export default class Router extends React.Component{
                         <Route path="/home" element={<Home/>}  />
                         <Route path="/login" element={<Login/>}  />
                         <Route path="/signup" element={<Signup/>}  />
+                        <Route path="/cart" element={<Cart/>}  />
                         <Route path="/product/:id" element={<Description/>}  />
                         <Route path="/" element={<Home/>}  />
                     </Routes>

@@ -1,0 +1,45 @@
+@import-normalize;
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  
+  /* Add a hover effect */
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+.container {
+  flex: 0 0 250px; /* Fix the width for the image container */
+  
+  img {
+    width: 70%; 
+    height: auto; 
+  }
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space so the last element is at the bottom */
+  padding-left: 20px;
+  flex-grow: 1; /* Make the product details take up remaining space */
+  font-size: 16px;
+}
+
+.productDetails p {
+  margin: 10px 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #333;
+  font-weight: bold;
+  align-self: flex-end;
+  padding-right: 40px;;
+}

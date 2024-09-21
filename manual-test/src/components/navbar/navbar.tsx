@@ -39,7 +39,7 @@ const Navbar:React.FC= () => {
                             </li>
                             <li className="nav-item hoover">
                                 <a className="nav-link">
-                                    <a className="fs-14">
+                                    <a className="fs-14" href="/cart">
                                         <i className="fa fa-shopping-cart" aria-hidden="true">
                                         </i>
                                     </a>
