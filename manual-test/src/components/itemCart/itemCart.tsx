@@ -12,9 +12,7 @@ interface MyPropsInterface{
 }
 
 const ItemCart:React.FC<MyPropsInterface> = ({item}) => {
-        let price = item.price.toFixed(2);
         let [updateCart, setUpdateCart] = useState(false);
-
         const add = (item:Item) =>{
             setUpdateCart(!updateCart)
             addItemToCart(item);
@@ -25,6 +23,7 @@ const ItemCart:React.FC<MyPropsInterface> = ({item}) => {
             removeItemFromCart(item);
         }
 
+        const factor = item.quantity > 1? 1.5:1;
 
         return (
             <div className={style.card}>
@@ -44,7 +43,7 @@ const ItemCart:React.FC<MyPropsInterface> = ({item}) => {
                     <p>Color: {item.color}</p>
                     <p>Size: {item.size}</p>
                     <p className={style.price} >
-                        {item.price} * {item.quantity} <i style={{fontWeight:"bold"}}>{` =  ${(item.price*item.quantity).toFixed(2)}  `}</i> 
+                        {item.price} * {item.quantity} <i style={{fontWeight:"bold"}}>{` =  ${(item.price*item.quantity*factor).toFixed(2)}  `}</i> 
                         <i className="fas fa-euro-sign" style={{fontSize:"26px"}}></i>
                     </p>
                 </div>
