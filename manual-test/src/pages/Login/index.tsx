@@ -23,7 +23,7 @@ const Login: React.FC = () => {
         <div className={style.wrapper}>
             <div className={style.container}>
                 <h1 className="text-center text-dark mt-5">Already our costumer?</h1>
-                <p className="text-center text-dark">Login and enjoy our offers or create a new account  <a href="/signup">here</a>!</p>
+                <p className="text-center text-dark">Login and enjoy our offers or create a new account  <a href="./signup">here</a>!</p>
                 <form>
                     <div className="form-group">
                         <label>email</label>

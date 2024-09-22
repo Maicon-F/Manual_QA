@@ -68,18 +68,18 @@ const Navbar: React.FC = () => {
                     <ul className="navbar-nav" style={{ marginRight: "10px", fontWeight: "300", display: "flex", justifyContent: "center" }}>
                         <li className="nav-item mr-3 ml-3 hoover">
                             {!user.name && (
-                                <a className="nav-link" href="/login">
+                                <a className="nav-link" href="./login">
                                     <i className="fa fa-user" aria-hidden="true"></i> Login
                                 </a>
                             )}
                         </li>
                         <li className="nav-item active">
-                            {user.name && <a className="user" href="/home">Welcome, {user.name}</a>}
+                            {user.name && <a className="user" href="./home">Welcome, {user.name}</a>}
                         </li>
 
                         <li className="nav-item hoover" style={{ margin: "0px 10px 0px 10px" }}>
                             {user.email?
-                            <a className="nav-link" href="/cart">
+                            <a className="nav-link" href="./cart">
                             <i className="fa fa-shopping-cart" aria-hidden="true"></i>
                         </a>
                         :null}
