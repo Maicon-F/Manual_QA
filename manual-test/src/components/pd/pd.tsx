@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from "./style.module.scss";
-import PurchaseButton from "../purchaseButton/purchaseButton";
+import AddToCartButton from "../purchaseButton/purchaseButton";
 import Item from '../../models/Item';
 import ColorOptions from '../attributes/color';
 import SizeOptions from '../attributes/size';
@@ -32,7 +32,7 @@ const PD: React.FC<MyComponentProps> = ({ item }) => {
         <ColorOptions colors={item.colors} selected={item.color} fromParent={handleColor}></ColorOptions>
         <SizeOptions sizes={item.sizes} selected={item.size} fromParent={handleSize}></SizeOptions>
         <p>Price: <i className="fas fa-euro-sign"> {item.price}</i></p>
-        <PurchaseButton name="ADD TO CART" item={product}></PurchaseButton>
+        <AddToCartButton name="ADD TO CART" item={product}></AddToCartButton>
         <p>{item.description}</p>
       </div>
     </div>

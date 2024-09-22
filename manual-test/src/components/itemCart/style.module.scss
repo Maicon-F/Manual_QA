@@ -7,7 +7,7 @@
   padding: 10px;
   border: 1px solid #ddd;
   margin-bottom: 20px;
-  
+
   /* Add a hover effect */
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -15,15 +15,40 @@
 }
 
 .container {
+  position: relative; /* Position relative to adjust buttons properly */
   flex: 0 0 250px; /* Fix the width for the image container */
-  
-  img {
-    width: 70%; 
-    height: auto; 
-  }
+}
+
+.mainImg {
+  width: 250px; /* Ensure the image fits well */
+  height: auto; 
+}
+
+.btn {
+  position: absolute;
+  width: 25px; /* Small size for the buttons */
+  height: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Animation effect */
+}
+
+.btn.plus {
+  top: 10px;
+  right: -35px; /* Move outside the image container */
+}
+
+.btn.minus {
+  bottom: 10px;
+  right: -35px; /* Move outside the image container */
+}
+
+/* Scale down on click */
+.btn:active {
+  transform: scale(0.8); /* Shrinks the button to 80% of its size */
 }
 
 .productDetails {
+  margin-left:100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Distributes space so the last element is at the bottom */
@@ -33,13 +58,14 @@
 }
 
 .productDetails p {
+  font-size: 24px;
   margin: 10px 0;
 }
 
 .price {
-  font-weight: bold;
   color: #333;
-  font-weight: bold;
-  align-self: flex-end;
-  padding-right: 40px;;
+  padding-right: 100px;
+  padding-top: 100px;
+  padding: 50px 20px 20px 100px;
 }
+

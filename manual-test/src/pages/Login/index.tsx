@@ -3,12 +3,21 @@ import Swal from "sweetalert2";
 import User from "../../models/User";
 import style from "./style.module.scss";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Login: React.FC = () => {
-
-    const [username, setUsername] = useState(''); 
+    const navigate = useNavigate();
+    const [email, setUsername] = useState(''); 
     const [pass, setPass] = useState(''); 
+    const [state, setState] = useState(false); 
+
+
+    const handle = (user:string, pass:string) => {
+        login(user,pass);
+        navigate("/home");
+        window.location.reload()
+    }
 
     return (
         <div className={style.wrapper}>
@@ -25,7 +34,7 @@ const Login: React.FC = () => {
                         <input onChange={(event)=> setPass(event.target.value)} type="text" className="form-control" id="formGroupExampleInput2" placeholder="Your password" />
                     </div>
                 </form>
-                <button onClick={()=>{login(username, pass)}} >Submit</button>
+                <button onClick={()=>{handle(email, pass)}} >Submit</button>
             </div>
         </div>
     )
@@ -34,13 +43,13 @@ const Login: React.FC = () => {
 export default Login;
 
 
-const login = (username: string, pass: string) => {
+const login = (email: string, pass: string) => {
     console.log("starting login request ....")
     let permissionToLogin = false;
     let users: User[] = loadUsers();
 
     for (let u of users) {
-        if (u.name === username && u.password === pass) {
+        if (u.email === email && u.password === pass) {
             permissionToLogin = true;
             saveUser(u);
             break;

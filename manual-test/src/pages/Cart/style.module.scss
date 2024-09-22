@@ -1,9 +1,42 @@
 .container{
     display:inline-block;
     font-family: var(--ral);
+    margin: 0px 50px;
+
     h1{
-        margin: 50px 0px 50px 0px;
+        justify-self: center;
+        margin: 50px 0px 50px 100px;
         font-size: 38px;
         font-weight: bold;
     }
+
+    button {
+        font-weight: bold; 
+        border: none;
+        background-color: #5ECE7B;
+        color: #FFFFFF;
+        padding: 1em 6em;
+        text-align: center;
+        font-size: 20px;
+        cursor: pointer;
+        margin: 20px 20px;
+        width: 100%;
+        box-shadow: 0px 7px 6px -4px grey;
+        transition: transform 0.1s ease-in-out;
+      }
+
+      button:hover{
+        color:black;
+      }
+    
+      button:active {
+        transform: scale(0.90); 
+      }
+
+      h2{
+        margin: 100px 100px;
+        color: black;
+        font-size: 32px;
+
+      }
 }

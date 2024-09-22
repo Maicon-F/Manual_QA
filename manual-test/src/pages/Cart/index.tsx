@@ -3,27 +3,52 @@ import { Exception } from "sass";
 import Item from "../../models/Item";
 import style from "./style.module.scss"
 import ItemCard from "../../components/itemCart/itemCart";
+import Swal from "sweetalert2";
+import { useState } from "react";
 
 
 const Cart: React.FC = () => {
 
+    let [state, setState] = useState(false);
     let user = loadUserData();
     if (user === undefined)
         throw Exception
-    
-    let oldCartData:Item[] = user.items as Item[];
+
+    let oldCartData: Item[] = user.items as Item[];
+    let sum = 0;
+    oldCartData.forEach((i) => {
+        sum = i.quantity * i.price + sum;
+    });
+
+    const completePurchase = () => {
+        purchase();
+        setState(!state);
+    }
 
     return (
         <div className={style.container}>
-        <h1>My bag: </h1>
-        <div className={style.container}>
-            {oldCartData.map((item: Item) => (
-                <div className={style.item} >
-                    <ItemCard key={item.id} item={item} />
-                </div>
-            ))}
+            {
+                (user.items && user.items[0]) ?
+                    <h1>My bag: </h1>
+                    :
+                    null
+            }
 
-        </div>
+            <div >
+                {oldCartData.map((item: Item) => (
+                    <div className={style.item} >
+                        <ItemCard key={item.id} item={item} />
+                    </div>
+                ))}
+            </div>
+            <div>{(user.items && user.items[0]) ?
+                <div>
+                    <p style={{fontSize:"32px"}}>Total: <i style={{fontWeight:"bold"}}>{sum}</i> <i className="fas fa-euro-sign" style={{fontSize:"26px"}}></i></p>
+                    <button onClick={() => completePurchase()}>PURCHASE</button>
+                </div> :
+                <div><h2>It seems your bag is empty. Find out our offers and start purchasing!</h2></div>
+            }
+            </div>
         </div >
     )
 }
@@ -31,35 +56,27 @@ const Cart: React.FC = () => {
 export default Cart;
 
 
-const addItemToCart = (product: Item) => {
-    let hasProduct = false;
-    let myCart: Item[] = [];
-
+const purchase = () => {
+    console.log("completing purchase...")
     let user = loadUserData();
 
     if (user === undefined)
         throw Exception
 
-    let oldCartData = user.items;
-
-    if (oldCartData != undefined)
-        for (let p of oldCartData) {
-            if (p.id === product.id && p.color == product.color && p.size == product.size) {
-                hasProduct = true;
-                product.quantity = (p.quantity + 1);
-                myCart.push(product);
-                continue;
-            }
-            myCart.push(p)
+    user.items = [];
+    Swal.fire({
+        title: 'Purchase completed!',
+        text: 'In few days your products will be ready!',
+        icon: 'success',
+        timer: 2000,
+        timerProgressBar: true,
+        willClose: () => {
+            console.log('Alert closed');
         }
+    });
 
-    if (!hasProduct) {
-        product.quantity = 1;
-        myCart.push(product);
-    }
-
-    user.items = myCart;
     save(user);
+
 }
 
 const loadUserData = () => {

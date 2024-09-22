@@ -7,8 +7,9 @@ import { useState } from "react";
 
 const Signup:React.FC = () => {
 
-    const [username, setUsername] = useState(''); 
+    const [email, setEmail] = useState(''); 
     const [pass, setPass] = useState(''); 
+    const [name, setName] = useState(''); 
 
     return (
         <div className={style.wrapper}>
@@ -16,9 +17,13 @@ const Signup:React.FC = () => {
                 <h1>Create an account</h1>
                 <p >Create an account and start purchasing!</p>
                 <form>
+                <div className="form-group">
+                        <label>Name</label>
+                        <input  onChange={(event)=>  setName(event.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="How do you wanna us to call you?" />
+                    </div>
                     <div className="form-group">
                         <label>email</label>
-                        <input  onChange={(event)=>  setUsername(event.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="insert your email" />
+                        <input  onChange={(event)=>  setEmail(event.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="insert your email" />
                     </div>
                     <div className="form-group">
                         <label >password</label>
@@ -29,7 +34,7 @@ const Signup:React.FC = () => {
                         <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="confirm your password" />
                     </div>
                 </form>
-                <button onClick={()=> signup(username, pass)} >Submit</button>
+                <button onClick={()=> signup(name, email, pass)} ><a href="/home">Submit</a></button>
             </div>
         </div>
     )
@@ -38,23 +43,28 @@ const Signup:React.FC = () => {
 export default Signup;
 
 
-const signup = (username: string, pass: string) => {
-    console.log("started sig nup request...");
+const signup = (name: string, email:string, pass: string) => {
+    console.log("starting sign up request...");
     let hasPermissionToCreate = true;
     let users: User[] = loadUsers();
 
     for (let u of users) {
-        if (u.name === username && u.password === pass) {
+        if (u.name === email) {
             hasPermissionToCreate = false;
             break;
         }
     }
 
     if (hasPermissionToCreate) {
-       const newUser = new User(username, pass);
+       const newUser = new User(name, email, pass);
        users.push(newUser);
+       Swal.fire({
+        title: 'Welcome to Arbro!',
+        text: 'Start purchaing and enjoy our offers!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
     } else {
-        console.log("got inside the alarm")
         Swal.fire({
             title: 'Sign up failure!',
             text: 'User already exits. Please try again with another account or contact our support team!',

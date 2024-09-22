@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import style from './style.module.scss';
 import Item from '../../models/Item';
 import User from '../../models/User';
-import { Exception } from 'sass';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 interface MyComponentProps {
   name: String;
@@ -10,10 +11,14 @@ interface MyComponentProps {
 }
 
 const PurchaseButton: React.FC<MyComponentProps> = ({ name, item }) => {
+  const navigate = useNavigate();
 
   const addToCart = () => {
     console.log("addToCart");
-    addItemToCart(item);
+    const res = addItemToCart(item);
+    
+    if(res)
+      navigate("/cart");
   };
 
   return (
@@ -30,8 +35,9 @@ const addItemToCart = (product: Item) => {
 
   let user = loadUserData();
 
-  if(user === undefined)
-    throw Exception
+  if(user === undefined){
+    return false;
+  }
   
   let oldCartData= user.items;
 
@@ -54,6 +60,7 @@ const addItemToCart = (product: Item) => {
 
   user.items = myCart;
   save(user);
+  return true;
 }
 
 const loadUserData = () => {
@@ -64,7 +71,13 @@ const loadUserData = () => {
   if (storedProducts) {
     loggedUser = JSON.parse(storedProducts) as User;
   } else {
-    throw Exception;
+    Swal.fire({
+      title: 'Failure!',
+      text: 'Please, login before purchaing!',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
+    return
   }
 
   for(let u of users){

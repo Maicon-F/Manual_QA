@@ -1,31 +1,47 @@
-.container{
-    background-color:  #66cdaa;
+.container {
+    background-color: #66cdaa;
     font-family: var(--ral);
     font-size: 22px;
     font-weight: bold;
-    border-bottom: 2px solid black; 
+    border-bottom: 2px solid black;
 
-    img{
+    img {
         margin-left: 20px;
-        width:  60px;
+        width: 60px;
         height: 60px;
         border-radius: 50%;
     }
 
- 
-
-    a{
-        &:first-child{
-            color:black;
-         }
-        &:hover{
+    a {
+        &:first-child {
+            color: black;
+        }
+        &:hover {
             color: white;
             font-weight: bold;
         }
     }
+}
 
-    
+// New styles for navbar alignment
+.navbar-nav {
+    display: flex;
+    align-items: center; /* Vertically aligns all nav items */
+    margin-left: auto; /* Push items to the right */
+}
 
-  
+.nav-item {
+    display: flex;
+    align-items: center; /* Vertically aligns items within each nav item */
+    margin: 0 10px; /* Adds spacing between nav items */
+}
+
+.user {
+    margin-right: 10px; /* Adds space before the cart icon */
+}
+
+.hoover a {
+    display: flex;
+    align-items: center;
 }
 
